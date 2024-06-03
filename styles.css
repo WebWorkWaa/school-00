@@ -76,6 +76,8 @@ nav {
   background-color: #000;
   margin: 4px 0;
   transition: 0.4s;
+  
+  /* Dropdown */
 }
 nav ul {
   list-style: none;
@@ -102,6 +104,7 @@ nav ul li a .dropdown-button {
 
 nav ul li:hover a {
   background-color: #ffffff;
+  
 }
 
 nav ul li ul {
@@ -114,6 +117,8 @@ nav ul li ul {
   list-style: none;
   padding: 0;
   margin: 0;
+  border-radius: 20px;
+  border-color: black;
   width: auto; /* Adjust width to fit content */
 }
 
@@ -128,7 +133,7 @@ nav ul li ul li a {
 }
 
 nav ul li ul li a:hover {
-  background-color: #f0f0f0;
+  background-color: #fff;
 }
 
 @media (max-width: 768px) {
