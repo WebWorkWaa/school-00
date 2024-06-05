@@ -27,6 +27,27 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 });
+document.addEventListener('DOMContentLoaded', function() {
+  var dropdown = document.getElementById('student-dropdown');
+  var menu = document.getElementById('student-menu');
+
+  dropdown.addEventListener('click', function() {
+    if (menu.style.display === 'block' || menu.style.display === '') {
+      menu.style.display = 'none';
+    } else {
+      menu.style.display = 'block';
+    }
+  });
+
+  // Close the dropdown menu if the user clicks outside of it
+  window.addEventListener('click', function(event) {
+    if (!event.target.matches('#student-dropdown')) {
+      if (menu.style.display === 'block') {
+        menu.style.display = 'none';
+      }
+    }
+  });
+});
 // Smooth scroll functionality for the scroll-down arrow
 document.querySelector('.scroll-down').addEventListener('click', function(e) {
   e.preventDefault();
