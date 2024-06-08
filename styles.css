@@ -4,23 +4,24 @@
   font-family: "Poppins", sans-serif;
   font-weight: 600;
   font-style: normal;
+  box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
 }
 
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 10px 10px 10px;
+  padding: 15px 10px;
   background-color: #fff;
-  position: fixed; /* Make the header fixed */
-  width: 100%; /* Ensure the header takes the full width */
-  top: 0; /* Position it at the top */
-  z-index: 1000; /* Ensure it appears above other content */
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
 }
 
 body {
   padding-top: 7em;
-  overflow-x: hidden;
+  overflow-x: hidden; /* Prevent horizontal overflow */
 }
 
 .logo {
@@ -31,12 +32,12 @@ body {
 .logo img {
   height: 60px;
   width: 60px;
-  margin-right: 10px; /* Add some space between the logo and text */
+  margin-right: 10px;
 }
 
 .school-name {
-  font-size: 20px; /* Adjust the font size as needed */
-  color: #000; /* Adjust the color to match your design */
+  font-size: 20px;
+  color: #000;
   display: inline-block;
 }
 
@@ -53,7 +54,7 @@ nav {
 }
 
 .menu li {
-  margin: 0 10px 0;
+  margin: 0 10px;
 }
 
 .menu li a {
@@ -78,9 +79,8 @@ nav {
   background-color: #000;
   margin: 4px 0;
   transition: 0.4s;
-  
-  /* Dropdown */
 }
+
 nav ul {
   list-style: none;
   margin: 0;
@@ -95,7 +95,7 @@ nav ul li {
 nav ul li a {
   text-decoration: none;
   color: black;
-  padding: 10px 10px;
+  padding: 10px;
   display: block;
 }
 
@@ -106,7 +106,6 @@ nav ul li a .dropdown-button {
 
 nav ul li:hover a {
   background-color: #ffffff;
-  
 }
 
 nav ul li ul {
@@ -120,8 +119,7 @@ nav ul li ul {
   padding: 0;
   margin: 0;
   border-radius: 18px;
-  /* border-color: black; */
-  width:fit-content; /* Adjust width to fit content */
+  width: fit-content;
 }
 
 nav ul li:hover ul {
@@ -130,8 +128,8 @@ nav ul li:hover ul {
 }
 
 nav ul li ul li a {
-  padding: 10px 10px;
-  white-space: nowrap; /* Prevent text wrapping */
+  padding: 10px;
+  white-space: nowrap;
 }
 
 nav ul li ul li a:hover {
@@ -139,32 +137,26 @@ nav ul li ul li a:hover {
 }
 
 .intro {
-  width: 200px;
+  width: 80%; /* Adjust to full width */
+  text-align: center;
 }
 
-.intro p{
-  margin-left: -300px;
-  margin-right: 150px;
-  margin-top: -215px;
-  
-}
+
 
 /* Circle Section */
 .circles {
   position: relative;
-  width: 600px;
-  height: 600px;
+  width: 100%;
+  height: auto;
   margin: 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap; /* Ensure circles wrap properly */
+  overflow: hidden; /* Prevent overflow */
 }
 
 .center-circle {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   width: 230px;
   height: 230px;
   background-color: #ffac1c;
@@ -176,10 +168,10 @@ nav ul li ul li a:hover {
   color: white;
   text-align: center;
   z-index: 1;
+  margin: 20px; /* Add margin for spacing */
 }
 
 .circle {
-  position: absolute;
   width: 140px;
   height: 140px;
   border-radius: 50%;
@@ -191,7 +183,8 @@ nav ul li ul li a:hover {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #aaa; /* Temporary background for better visibility */
+  background-color: #aaa;
+  margin: 20px; /* Add margin for spacing */
 }
 
 .circle img {
@@ -213,8 +206,10 @@ nav ul li ul li a:hover {
 
 .circle:hover {
   transform: scale(1.1);
+  
 }
 
+/* Specific positions for the circles, adjust as needed */
 #infrastructure {
   top: 4%;
   left: 45%;
@@ -240,62 +235,61 @@ nav ul li ul li a:hover {
   left: 5%;
 }
 
-@media (max-width: 448px) {
-  .intro{
-  display: flex;
-  text-align: center;
-  margin-left: 250px;
-  margin-right: 10px;
+/* Media Queries */
+@media (max-width: 992px) {
+  .circles {
+    flex-direction: column; /* Stack circles vertically */
+    align-items: center;
   }
 
-  .center-circle{
-  display: flex;
-  justify-content: center;
-  margin-top: 50px;
-  margin-left: -80px;
-  margin-right: 10px;
+  .circle, .center-circle {
+    width: 140px; /* Smaller size for smaller screens */
+    height: 140px;
   }
 
-  #infrastructure {
-  left: 2em;
-  top: 30em;
-  }
-
-  #education {
-    right: 14em;
-    top: 30em;
-  }
-
-  #arts {
-    left: 2em;
-    top: 42em;
-  }
-
-  #sports {
-    right: 14em;
-    top: 42em;
-  }
-
-  #residential-program{
-    right: 14em;
-    top: 54em;
+  #infrastructure, #education, #arts, #sports, #residential-program {
+    position: static; /* Remove specific positions */
+    margin: 10px 0; /* Add spacing between circles */
   }
 }
 
 @media (max-width: 768px) {
-  nav ul {
-    display: block;
-  }
-  
-  nav ul li {
-    display: block;
-    margin-bottom: 10px;
+  .circle, .center-circle {
+    width: 120px; /* Smaller size for smaller screens */
+    height: 120px;
   }
 
-  nav ul li ul {
+  .circles {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #infrastructure, #education, #arts, #sports, #residential-program {
     position: static;
+    margin: 10px 0;
   }
 }
+
+@media (max-width: 448px) {
+  .center-circle {
+    width: 250px; /* Smaller size for smaller screens */
+    height: 250px;
+  }
+
+  .circle{
+  }
+
+  .circles {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #infrastructure, #education, #arts, #sports, #residential-program {
+    position: static;
+    margin: 10px 0;
+  }
+}
+
 .hero {
   display: flex;
   justify-content: space-between;
@@ -309,7 +303,7 @@ nav ul li ul li a:hover {
 .hero-text {
   max-width: 50%;
   text-align: left;
-  margin-right: 20px; /* Adjust margin to reduce space */
+  margin-right: 20px;
 }
 
 .hero-text h1 {
@@ -327,7 +321,7 @@ nav ul li ul li a:hover {
   color: #777;
 }
 
-.registration{
+.registration {
   color: #fff;
   background-color: #09B451;
   border-color: #000;
@@ -336,26 +330,12 @@ nav ul li ul li a:hover {
   height: 40px;
 }
 
-.registration  a:link {
-  text-decoration: none;
-  color: #fff;
-}
-
-.registration a:visited {
-  text-decoration: none;
-  color: #fff;
-}
-
-.registration a:hover {
-  text-decoration: none;
-  color: #fff;
-
-}
-
+.registration a:link,
+.registration a:visited,
+.registration a:hover,
 .registration a:active {
   text-decoration: none;
   color: #fff;
-
 }
 
 .scroll-down {
@@ -411,7 +391,7 @@ nav ul li ul li a:hover {
 }
 
 .about-text {
-  padding: 0 10% 0 10%;
+  padding: 0 10%;
   margin-top: 20px;
   font-size: 20px;
 }
@@ -498,11 +478,24 @@ nav ul li ul li a:hover {
   }
 
   .activity {
-    width: calc(50% - 20px); /* Adjust width for smaller screens */
+    width: calc(50% - 20px);
   }
 
   footer {
-    background-color: #ffac1c; /* Set the background color for smaller screens */
+    background-color: #ffac1c;
+  }
+
+  nav ul {
+    display: block;
+  }
+  
+  nav ul li {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  nav ul li ul {
+    position: static;
   }
 }
 
@@ -519,50 +512,52 @@ nav ul li ul li a:hover {
   }
 
   .activity {
-    width: 100%; /* Full width for very small screens */
+    width: 100%;
   }
 
-  .about{
-    margin-top: 25em;
+  .about {
+    margin-top: 2em;
+  }
+
+  .intro {
+    display: flex;
+    text-align: center;
+    margin: 0 10px; /* Adjusted margins */
+    margin-top: 100px;
+  }
+  
+  .center-circle {
+    display: flex;
+    justify-content: center;
+    margin: 50px auto 0; /* Centered */
+  }
+
+  #infrastructure {
+    left: 2em;
+    top: 30em;
+  }
+
+  #education {
+    right: 14em;
+    top: 30em;
+  }
+
+  #arts {
+    left: 2em;
+    top: 42em;
+  }
+
+  #sports {
+    right: 14em;
+    top: 42em;
+  }
+
+  #residential-program {
+    right: 14em;
+    top: 54em;
   }
 }
-/* Section */
-/* .school-sections {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(300px, 1fr));
-  gap: 20px;
-  padding: 20px;
-}
 
-.section {
-  position: relative;
-  overflow: hidden;
-}
-
-.section img {
-  width: 100%;
-  height: 90%;
-  display: block;
-  transition: transform 0.3s ease-in-out;
-  border-radius: 25px;
-}
-
-.section:hover img {
-  transform: scale(1.05);
-}
-
-.caption {
-  position: absolute;
-  bottom: 28px;
-  left: 2px;
-  background: #909090;
-  color: #fff;
-  padding: 3px;
-  font-size: 18px;
-  border-radius: 12px;
-} */
-
-/* Banner section */
 .image-banner-section {
   width: 100%;
   overflow: hidden;
@@ -581,7 +576,7 @@ nav ul li ul li a:hover {
 }
 
 .banner-track img {
-  width: 100vw; /* Each image takes up the full viewport width */
+  width: 100vw;
   height: auto;
 }
 
@@ -648,11 +643,9 @@ footer {
   text-align: left;
 }
 
-
 .footer-menu span a:link {
   color: #09B451;
   text-decoration: none;
-  /* font-family: "stalemate", cursive; */
   font-weight: 400;
   font-style: normal;
   font-size: medium;
@@ -663,7 +656,7 @@ footer {
   text-decoration: none;
 }
 
-.footer-copyright{
+.footer-copyright {
   text-align: center;
   font-size: small;
 }
