@@ -20,6 +20,7 @@ header {
 
 body {
   padding-top: 7em;
+  overflow-x: hidden;
 }
 
 .logo {
@@ -38,6 +39,7 @@ body {
   color: #000; /* Adjust the color to match your design */
   display: inline-block;
 }
+
 nav {
   display: flex;
   align-items: center;
@@ -137,9 +139,16 @@ nav ul li ul li a:hover {
 }
 
 .intro {
-  width: 30%;
-  height: 10%;
+  width: 200px;
 }
+
+.intro p{
+  margin-left: -300px;
+  margin-right: 150px;
+  margin-top: -215px;
+  
+}
+
 /* Circle Section */
 .circles {
   position: relative;
@@ -156,8 +165,8 @@ nav ul li ul li a:hover {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 220px;
-  height: 220px;
+  width: 230px;
+  height: 230px;
   background-color: #ffac1c;
   border-radius: 50%;
   display: flex;
@@ -207,7 +216,7 @@ nav ul li ul li a:hover {
 }
 
 #infrastructure {
-  top: 5%;
+  top: 4%;
   left: 45%;
 }
 
@@ -217,8 +226,8 @@ nav ul li ul li a:hover {
 }
 
 #arts {
-  top: 65%;
-  right: 5%;
+  top: 63%;
+  right: 10%;
 }
 
 #sports {
@@ -231,6 +240,47 @@ nav ul li ul li a:hover {
   left: 5%;
 }
 
+@media (max-width: 448px) {
+  .intro{
+  display: flex;
+  text-align: center;
+  margin-left: 250px;
+  margin-right: 10px;
+  }
+
+  .center-circle{
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  margin-left: -80px;
+  margin-right: 10px;
+  }
+
+  #infrastructure {
+  left: 2em;
+  top: 30em;
+  }
+
+  #education {
+    right: 14em;
+    top: 30em;
+  }
+
+  #arts {
+    left: 2em;
+    top: 42em;
+  }
+
+  #sports {
+    right: 14em;
+    top: 42em;
+  }
+
+  #residential-program{
+    right: 14em;
+    top: 54em;
+  }
+}
 
 @media (max-width: 768px) {
   nav ul {
@@ -277,6 +327,37 @@ nav ul li ul li a:hover {
   color: #777;
 }
 
+.registration{
+  color: #fff;
+  background-color: #09B451;
+  border-color: #000;
+  border-radius: 30px;
+  width: 140px;
+  height: 40px;
+}
+
+.registration  a:link {
+  text-decoration: none;
+  color: #fff;
+}
+
+.registration a:visited {
+  text-decoration: none;
+  color: #fff;
+}
+
+.registration a:hover {
+  text-decoration: none;
+  color: #fff;
+
+}
+
+.registration a:active {
+  text-decoration: none;
+  color: #fff;
+
+}
+
 .scroll-down {
   display: inline-block;
   margin-top: 20px;
@@ -303,7 +384,7 @@ nav ul li ul li a:hover {
   height: auto;
   border-radius: 8px 8px 110px 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  border: 2px black solid;
+  border: 3px black solid;
 }
 
 .about {
@@ -421,11 +502,11 @@ nav ul li ul li a:hover {
   }
 
   footer {
-    background-color: #000; /* Set the background color for smaller screens */
+    background-color: #ffac1c; /* Set the background color for smaller screens */
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 448px) {
   .header h1 {
     font-size: 28px;
   }
@@ -440,11 +521,15 @@ nav ul li ul li a:hover {
   .activity {
     width: 100%; /* Full width for very small screens */
   }
+
+  .about{
+    margin-top: 25em;
+  }
 }
 /* Section */
-.school-sections {
+/* .school-sections {
   display: grid;
-  grid-template-columns: repeat(5, minmax(250px, 1fr));
+  grid-template-columns: repeat(4, minmax(300px, 1fr));
   gap: 20px;
   padding: 20px;
 }
@@ -468,18 +553,51 @@ nav ul li ul li a:hover {
 
 .caption {
   position: absolute;
-  bottom: 10px;
-  left: 10px;
+  bottom: 28px;
+  left: 2px;
   background: #909090;
   color: #fff;
-  padding: 5px;
+  padding: 3px;
   font-size: 18px;
-  border-radius: 8px;
+  border-radius: 12px;
+} */
+
+/* Banner section */
+.image-banner-section {
+  width: 100%;
+  overflow: hidden;
+  background-color: #333;
 }
+
+.banner {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.banner-track {
+  display: flex;
+  animation: scroll 20s linear infinite;
+}
+
+.banner-track img {
+  width: 100vw; /* Each image takes up the full viewport width */
+  height: auto;
+}
+
+@keyframes scroll {
+  0% {
+      transform: translateX(0);
+  }
+  100% {
+      transform: translateX(-100%);
+  }
+}
+
 /* Footer Section */
 footer {
-  background-color: #000;
-  color: #fff;
+  background-color: #ffac1c;
+  color: #000;
   padding: 20px 0;
   text-align: left;
 }
@@ -501,7 +619,7 @@ footer {
 
 .footer-content p {
   font-size: 14px;
-  font-weight: 150;
+  font-weight: 550;
 }
 
 .socials {
@@ -511,7 +629,7 @@ footer {
 
 .socials a {
   margin: 20px;
-  color: #09B451;
+  color: #000;
 }
 
 .socials i {
@@ -534,7 +652,7 @@ footer {
 .footer-menu span a:link {
   color: #09B451;
   text-decoration: none;
-  font-family: "stalemate", cursive;
+  /* font-family: "stalemate", cursive; */
   font-weight: 400;
   font-style: normal;
   font-size: medium;
@@ -543,4 +661,9 @@ footer {
 .footer-menu span a:visited {
   color: #09B451;
   text-decoration: none;
+}
+
+.footer-copyright{
+  text-align: center;
+  font-size: small;
 }
