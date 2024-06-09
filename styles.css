@@ -193,17 +193,6 @@ nav ul li ul li a:hover {
   object-fit: cover;
 }
 
-.circle p {
-  margin: 0;
-  padding: 5px 0 0 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  color: white;
-  width: 100%;
-  text-align: center;
-  position: absolute;
-  bottom: -20px;
-}
-
 .circle:hover {
   transform: scale(1.1);
   
